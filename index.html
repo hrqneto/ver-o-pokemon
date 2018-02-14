@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Belémons Battle</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <!--- Must wait for messages to complete before clicking -->
+
+<body>
+
+ <div id="app">
+    <h1 class="title">Belémons Battle</h1>
+ <!-- Begin battle scene -->
+ <div class="battle-scene">
+   <div class="box-top-left">
+     <h2 class="pokemon">{{opponentPokemon}}</h2>
+     <div class="hp-bar-top">
+       <div v-bind:style="opponentHpBar" class="hp-bar-fill"></div>
+     </div>
+     <h4 class="level">Lvl. {{opponentLevel}}</h4>
+   </div>
+   <div class="box-top-right">
+     <img v-if="opponentAlive" v-bind:src="opponentPokemonSrc" class="pokemon-top" />
+   </div>
+    <div class="box-bottom-left">
+      <img v-if="userAlive" v-bind:src="userPokemonSrc" class="pokemon-bottom" />
+   </div>
+   <div class="box-bottom-right">
+      <h2 class="pokemon"> {{userPokemon}}</h2>
+     <div class="hp-bar-bottom">
+       <div v-bind:style="userHpBar" class="hp-bar-fill"></div>
+     </div>
+     <h4 class="level">Lvl. {{userLevel}}</h4>
+     <h4 class="hp">{{userHP}}/{{startUserHP}}</h4>
+   </div>
+   <div class="bottom-menu">
+     <div class="battle-text text-box-left">
+       {{battleText}}
+     </div>
+       <div class="text-box-right">
+       <div v-if="optionsOn" id="battleOptions">
+         <h4 v-on:click="processOption(1)" class="battle-text-top-left">{{battleOptions[0]}}</h4>
+<h4 v-on:click="processOption(2)" class="battle-text-top-right">{{battleOptions[1]}}</h4>
+<h4 v-on:click="processOption(3)" class="battle-text-bottom-left">{{battleOptions[2]}}</h4>
+<h4 v-on:click="processOption(4)" class="battle-text-bottom-right">{{battleOptions[3]}}</h4> 
+         </div>
+      <div v-if="fightOn" id="fightOptions">
+<h4 v-on:click="processAttack(1)" class="battle-text-top-left">{{fightOptions[0]}}</h4>
+<h4 v-on:click="processAttack(2)" class="battle-text-top-right">{{fightOptions[1]}}</h4>
+<h4 v-on:click="processAttack(3)" class="battle-text-bottom-left">{{fightOptions[2]}}</h4>
+<h4 v-on:click="processAttack(4)" class="battle-text-bottom-right">{{fightOptions[3]}}</h4> 
+         </div>
+      <div v-if="endOn" id="endOptions">
+        <h4 v-on:click="resetBattle" class="battle-text-top-left">{{endOptions[0]}}</h4>
+<h4 class="battle-text-top-right">{{endOptions[1]}}</h4>
+      </div>
+         
+     </div>
+   </div>
+   
+ 
+ </div> 
+  <!-- end battle scene -->
+ </div>
+
+</body>
+  <script src='https://unpkg.com/vue/dist/vue.js'></script>
+
+    <script  src="js/index.js"></script>
+
+</body>
+</html>
