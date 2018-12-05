@@ -2,7 +2,7 @@ var app = new Vue({
   el: '#app',
   data: {
      userPokemonSrc: "http://www.museuescola.ibb.unesp.br/images/Urubu_de_cabe%C3%A7a_preta(Daniel)_arte_small.png",
-     opponentPokemonSrc: "http://artesol.org.br/wp-content/uploads/2015/09/AB017-cobra-M-150x150.jpg",
+     opponentPokemonSrc: "https://i.pinimg.com/originals/0a/62/dc/0a62dc7031de440980ca52dc464cd08b.jpg",
      userPokemon: "Urubu do veropeso",
      opponentPokemon: "Miriti vemtimbora",
      userAlive: true,
